@@ -57,7 +57,9 @@ function generateResources(tables) {
 // Fonction pour ajouter la logique crud de base dans chaque service
 function updateServiceFile(table) {
     const className = table.charAt(0).toUpperCase() + table.slice(1); // Ex: users -> User
-    const serviceFilePath = path_1.default.join(__dirname, `../src/${table}/${table}.service.ts`);
+    const projectRoot = process.cwd();
+    const serviceDirPath = path_1.default.join(projectRoot, 'src', table);
+    const serviceFilePath = path_1.default.join(serviceDirPath, `${table}.service.ts`);
     const entityName = className;
     const dtoCreate = `Create${className}Dto`;
     const dtoUpdate = `Update${className}Dto`;
