@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "description": "Générateur automatique d'API pour NestJS",
   "main": "dist/index.js",
-  "license":"MIT",
+  "license": "MIT",
   "bin": {
     "nestjs-generate-api": "dist/index.js"
   },

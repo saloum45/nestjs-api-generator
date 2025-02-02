@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { DataSource } from "typeorm";
 import { getTables, generateResources } from "./db";
 
