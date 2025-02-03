@@ -10,16 +10,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+require("dotenv/config");
 const typeorm_1 = require("typeorm");
 const db_1 = require("./db");
 // Configuration de la base de données
 const AppDataSource = new typeorm_1.DataSource({
-    type: "mysql",
-    host: "localhost",
-    port: 3306,
-    username: "root",
-    password: "",
-    database: "nestapp",
+    type: process.env.DB_TYPE, // Cast nécessaire pour TypeORM
+    host: process.env.DB_HOST || 'localhost',
+    port: parseInt(process.env.DB_PORT || '3306', 10),
+    username: process.env.DB_USERNAME || 'root',
+    password: process.env.DB_PASSWORD || '',
+    database: process.env.DB_NAME,
+    synchronize: false,
 });
 function main() {
     return __awaiter(this, void 0, void 0, function* () {

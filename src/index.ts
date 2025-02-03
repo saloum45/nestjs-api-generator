@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import "dotenv/config"; 
 import { DataSource, DataSourceOptions } from "typeorm";
 import { getTables, generateResources } from "./db";
 
